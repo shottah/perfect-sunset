@@ -8,11 +8,16 @@ import './assets/styles/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
+import Firebase, { FirebaseContext } from './component/Firebase';
 
 import * as serviceWorker from './serviceWorker';
 
+require('dotenv').config();
+
 ReactDOM.render(
-	<App />,
+	<FirebaseContext.Provider value={new Firebase()}>
+    	<App />
+  	</FirebaseContext.Provider>,
 	document.getElementById('root')
 );
 
