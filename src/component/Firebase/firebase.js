@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import 'firebase/database';
 
 var firebaseConfig = {
     apiKey: process.env.API_KEY,
@@ -14,6 +15,16 @@ var firebaseConfig = {
   	process.env.ENV === 'production' ? firebaseConfig : firebaseConfig;
 
 
-  class Firebase = () => {
-  	app.initializeApp(config);
-  }
+class Firebase {
+	constructor () {
+		app.initializeApp(config);
+
+		this.db = app.database();
+	}
+	
+	post = pid => this.db.ref(`posts/${pid}`);
+
+	posts = () => this.db.ref(`posts`);
+}
+
+  export default Firebse;
