@@ -12,8 +12,6 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
   };
 
-console.log(firebaseConfig)
-
 const config =
 	process.env.ENV === 'production' ? firebaseConfig : firebaseConfig;
 
@@ -21,7 +19,6 @@ const config =
 class Firebase {
 	constructor () {
 		app.initializeApp(config);
-
 		this.db = app.database();
   }
 
@@ -29,7 +26,7 @@ class Firebase {
 	
 	post = pid => this.db.ref(`posts/${pid}`);
 
-	posts = () => this.db.ref(`posts`);
+	posts = () => this.db.ref(`posts/`);
 }
 
 export default Firebase;

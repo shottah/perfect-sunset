@@ -8,7 +8,8 @@ import './assets/styles/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
-import Firebase, { FirebaseContext } from './component/Firebase';
+import Firebase from './component/Firebase/firebase';
+import { FirebaseContext } from './component/Firebase/context';
 
 import * as serviceWorker from './serviceWorker';
 
