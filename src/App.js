@@ -79,7 +79,7 @@ class App extends React.Component {
 
     setWeatherStates = (result) => {
     	var type = "", message = "";
-		result = 1
+			
 		if (0 < result && result <= 3) {
 			result = weather.perfect;
 			type = "Perfect";
@@ -116,7 +116,7 @@ class App extends React.Component {
 
     	const locale = evt.target.elements.locale.value;
     	const country = evt.target.elements.country.value;
-		
+
 		if (locale && country) {
 			const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locale},${country}&appid=` + secret.API_KEY);
     		const data = await api_call.json();
@@ -147,7 +147,7 @@ class App extends React.Component {
 			dataView: undefined
 		})
 
-		
+
     }
 };
 
