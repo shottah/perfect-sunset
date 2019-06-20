@@ -19,11 +19,11 @@ const config =
 class Firebase {
 	constructor () {
 		app.initializeApp(config);
-		this.db = app.database();
+		//this.db = app.database();
   }
 
   // *** WEATHER POST API *** //
-	
+
 	post = pid => this.db.ref(`posts/${pid}`);
 
 	posts = () => this.db.ref(`posts/`);
