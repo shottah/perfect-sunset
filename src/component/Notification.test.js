@@ -47,10 +47,22 @@ describe('<Notification> renders with requirements:', () => {
         it('should have alert class', () => {
             expect(wrapper.first('div').hasClass('alert')).toBe(true);
         });
+    });
+    
+    describe('danger render', () => {
+
+        beforeEach(() => {
+            testProps.type = 'danger';
+            wrapper = shallow(<Notification {...testProps}/>);
+        })
+
+        it('should have danger class', () => {
+            expect(wrapper.first('div').hasClass('danger')).toBe(true);
+        });
     })
 
     it('should have a close button', () => {
-        expect(wrapper.find('span')).toHaveLength(1);
+        expect(wrapper.find('button')).toHaveLength(1);
     });
 });
 

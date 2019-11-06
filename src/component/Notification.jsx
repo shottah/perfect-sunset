@@ -14,7 +14,7 @@ const Notification = (props) => {
 
 Notification.propTypes = {
     label: PropTypes.string.isRequired,
-    type: PropTypes.oneOf(['default', 'alert']),
+    type: PropTypes.oneOf(['default', 'alert', 'danger']),
     description: PropTypes.string.isRequired,
 };
 
