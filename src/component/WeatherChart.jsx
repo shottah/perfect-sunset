@@ -17,7 +17,7 @@ const WeatherChart = (props) => {
     return (
         <div>
             <table className="table">
-                <thead>
+                <thead className="thead-light">
                     <tr>
                         <th scope="col">Category</th>
                         <th scope="col">Value</th>
@@ -33,12 +33,12 @@ const WeatherChart = (props) => {
 
 WeatherChart.propTypes = {
     data: PropTypes.shape({
-        wind: PropTypes.number,
-        clouds: PropTypes.number,
-        humidity: PropTypes.number,
-        locale: PropTypes.string,
-        date: PropTypes.string
-    }).isRequired,
+        wind: PropTypes.number.isRequired,
+        clouds: PropTypes.number.isRequired,
+        humidity: PropTypes.number.isRequired,
+        locale: PropTypes.string.isRequired,
+        time: PropTypes.string.isRequired
+    })
 };
 
 export default WeatherChart;
