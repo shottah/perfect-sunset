@@ -8,6 +8,13 @@ export const testData = ({
     }
 });
 
+export const testSunsetViewSuccess = ({
+    time: new Date().toLocaleTimeString([], {hour12: true}),
+    title: "Perfect Sunset",
+    description: "This couldn't get any better",
+    rating: 20
+})
+
 export const successData = ({
 
 })
