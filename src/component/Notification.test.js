@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Notification from './Notification';
 
 import { shallow } from 'enzyme';
