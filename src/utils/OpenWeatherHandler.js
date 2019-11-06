@@ -8,7 +8,6 @@ import axios from 'axios';
  */
 export const getWeatherFor = async (locale, country) => {
     const uri = process.env.REACT_APP_WEATHER_URL + locale + ',' + country + process.env.REACT_APP_WEATHER_API_KEY;
-    console.log(uri);
     return axios.get(uri)
         .then(res => (res.data))
         .catch(err => (err.response));
