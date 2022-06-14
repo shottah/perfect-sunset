@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Perfect Sunset
 
-## Available Scripts
+1. [Overview](#overview)
+2. [Technologies](#technologies)
+    1. [ReactJs](#installation)
+    2. [OpenWeatherMap API](#open-weather-map)
+3. [Reasoning](#reasoning)
+    1. [Wind Speed](#wind-speed)
+    2. [Cloud Coverage](#cloud-coverage)
+4. [Environment Setup](#environment-setup)
+5. [Commands](#commands)
 
-In the project directory, you can run:
+This pet project was inspired by the need for social-minded individuals to maximize the potential of beautiful sunsets in images on Instagram, Facebook, or interpersonal sharing.
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This SPA allows a user to search for a location by City and Country name. Doing so accesses OpenWeatherMap API to retrieve the current weather for the location.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### Technologies
 
-### `npm test`
+#### React Js
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This web app is written in ReactJs using the standard Javascript flavor.
 
-### `npm run build`
+#### OpenWeatherMap API
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This web app uses the OpenWeatherMap API to retrieve the current weather for a given location.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+[Visit API Docs](https://openweathermap.org/current)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Reasoning
 
-### `npm run eject`
+The evaluation of the quality of a Sunset is highly opinioned and in this implementation, considers the following factors: wind speed, cloud coverage, air pollution, rainfall, and other factors.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Wind Speed
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The wind speed is one of more higher weighted factors that is effect the evaluation of the quality of a Sunset. The Beaufort scale is used to categorize the wind speed. *A photographer may need to take many photos, and the wind's speed can drastically change the landscape*
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Read about the Beaufort Scale](https://www.rmets.org/metmatters/beaufort-scale)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### Cloud Coverage
 
-## Learn More
+The cloud coverage is another important factor, since it adds variety and activity to the image. Here is where a measurable degree of opinionated evaluation is needed, for this reason, cloud coverage ranges where `0.45 < x < 0.65` are preferred.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Environment Setup
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`secret.json` is a file that contains the API key for the OpenWeatherMap API
 
-### Code Splitting
+```js
+export const API_KEY = "<your-api-key>";
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Commands
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```sh
+yarn install # install dependencies
+yarn start # start the app
+```
