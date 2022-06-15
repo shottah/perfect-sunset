@@ -1,24 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import './index.css';
-import './App.css';
-import './assets/styles/forms.css';
-import './assets/styles/main.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import App from './App';
-import Firebase from './component/Firebase/firebase';
-import { FirebaseContext } from './component/Firebase/context';
+import { Provider } from 'react-redux';
 
 import * as serviceWorker from './serviceWorker';
+import {store} from './redux/configure';
+import App from './App';
 
 require('dotenv').config();
 
 ReactDOM.render(
-	<FirebaseContext.Provider value={new Firebase()}>
-    	<App />
-  	</FirebaseContext.Provider>,
+		<Provider store={store}>
+			<App/>
+		</Provider>,
 	document.getElementById('root')
 );
 
